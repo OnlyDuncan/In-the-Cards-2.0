@@ -23,11 +23,11 @@ async function CardPicker() {
     ];
 
     let cardArray = [];
-    console.log("Starting to fetch cards...");
+    // console.log("Starting to fetch cards...");
 
     for (const cardName of cardNames) {
         let tempArray = [];
-        console.log(`Fetching card data for: ${cardName}`);
+        // console.log(`Fetching card data for: ${cardName}`);
 
         for (const orientation of orientations) {
             const cardRef = doc(db, "cards", cardName, cardName, `${cardName} (${orientation})`);
@@ -36,12 +36,12 @@ async function CardPicker() {
                 const cardData = cardSnap.data();
                 if (cardData) {
                     tempArray.push(cardData);
-                    console.log(`Fetched data for ${cardName} (${orientation}):`, cardData);
+                    // console.log(`Fetched data for ${cardName} (${orientation}):`, cardData);
                 } else {
-                    console.log(`No data found for ${cardName} (${orientation})`);
+                    // console.log(`No data found for ${cardName} (${orientation})`);
                 }
             } catch (error) {
-                console.error(`Error fetching card data for ${cardName} (${orientation}):`, error);
+                // console.error(`Error fetching card data for ${cardName} (${orientation}):`, error);
             }
         }
 
@@ -50,7 +50,7 @@ async function CardPicker() {
         }
     }
 
-    console.log("Finished fetching cards:", cardArray);
+    // console.log("Finished fetching cards:", cardArray);
 
     return cardArray;
 }

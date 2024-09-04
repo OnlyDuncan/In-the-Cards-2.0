@@ -14,16 +14,24 @@ function shuffle(array) {
     return array;
 };
 
-function deckBuilder(deckArray) {
+export default function deckBuilder(deck) {
 
+    const deckArray = JSON.parse(JSON.stringify(deck));
     let spreadArray = [];
 
     for (let i = 0; i < deckArray.length; i++) {
-        deckArray[i] = shuffle(deckArray[i]);
-        spreadArray.push(deckArray[i][0]);
+        const card = deckArray[i];
+
+        if (card.data && Array.isArray(card.data)) {
+            const shuffledData = shuffle(card.data);
+            spreadArray.push(shuffledData[0]);
+        } else {
+            console.warn(`No data found for card "${card.cardName}" or data is not an array.`);
+        }
     }
 
     spreadArray = shuffle(spreadArray);
+    console.log("Spread Array:", spreadArray);
 
     return spreadArray;
 

@@ -4,9 +4,8 @@ import React, { useEffect } from 'react';
 import Header from '../../components/Header.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCards } from '../../redux/actions/cardActions';
-import Image from 'next/image';
 
-export default function About() {
+export default function Settings() {
 
   const dispatch = useDispatch();
   const { cardArray, loading, error } = useSelector(state => state.cards);
@@ -21,11 +20,10 @@ export default function About() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error loading cards; {error}</div>;
 
-
   return (
     <div>
       <Header />
-      <div>This is the about page.</div>
+      <div>This is the settings page.</div>
     </div>
   )
 }
