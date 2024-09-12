@@ -186,3 +186,38 @@ body {
     display: flex;
   }
 }
+
+/* FAQ */
+
+/* src/FAQ.css */
+.faq-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.faq-item {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.faq-question {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.faq-icon {
+  font-weight: bold;
+}
+

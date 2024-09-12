@@ -5,6 +5,7 @@ import Header from '../../components/Header.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCards } from '../../redux/actions/cardActions';
 import Image from 'next/image';
+import CardContentsLibrary from '@/components/CardContentsLibrary.js';
 
 export default function Library() {
 
@@ -37,10 +38,6 @@ export default function Library() {
     { title: "Suite of Pentacles", start: 64, end: 77 }
   ];
 
-  const cleanTitle = (title) => {
-    return title.replace(/\s*\(.*\)/, '').trim();
-  }
-
   console.log("Filtered Deck:", filteredDeck);
 
   return (
@@ -53,20 +50,29 @@ export default function Library() {
             <h2 className="text-2xl font-bold mb-4">{title}</h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:px-5">
               {filteredDeck.slice(start, end + 1).map((card) => (
-                <div
+                // <div
+                //   key={card.Title}
+                //   className="relative"
+                // >
+                //   <Image
+                //     src={`/Images/${card.Image}.webp`}
+                //     alt={`Tarot Card`}
+                //     layout="responsive"
+                //     width={250}
+                //     height={750}
+                //     className="object-cover"
+                //   />
+                //   <div className="text-center mt-2 text-black">{cleanTitle(card.Title)}</div>
+                // </div>
+
+                <CardContentsLibrary
                   key={card.Title}
-                  className="relative"
-                >
-                  <Image
-                    src={`/Images/${card.Image}.webp`}
-                    alt={`Tarot Card`}
-                    layout="responsive"
-                    width={250}
-                    height={750}
-                    className="object-cover"
-                  />
-                  <div className="text-center mt-2 text-black">{cleanTitle(card.Title)}</div>
-                </div>
+                  Title={card.Title}
+                  Orientation={card.Orientation}
+                  Image={card.Image}
+                  Meaning={card.Meaning}
+                  Deck={deck}
+                />
               ))}
             </div>
           </div>

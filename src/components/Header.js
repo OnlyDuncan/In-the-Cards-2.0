@@ -12,11 +12,11 @@ export default function Header() {
     <header className="header">
       <nav className={`nav ${isMenuOpen ? "navOpen" : ''}`}>
         <ul className="menu">
+          <li><Link href="/">Home</Link></li>
           <li><Link href="/library">Library</Link></li>
           <li><Link href="/about">About</Link></li>
           <li><Link href="/newsletter">Newsletter</Link></li>
           <li><Link href="/instructions">Instructions</Link></li>
-          <li><Link href="/settings">Settings</Link></li>
         </ul>
       </nav>
       <button className="hamburger" onClick={toggleMenu}>
