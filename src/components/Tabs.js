@@ -7,11 +7,15 @@ const TabsSetup = ({ title, isActive, onClick }) => {
     const activeStyle = {
         backgroundColor: '#f0f0f0',
         fontWeight: 'bold',
+        marginRight: '10px',
+        marginLeft: '10px'
     };
 
     const notActiveStyle = {
         backgroundColor: '#e0e0e0',
         color: '#555',
+        marginRight: '10px',
+        marginLeft: '10px'
     };
 
     return (
@@ -35,25 +39,31 @@ export default function Tabs() {
 
     return (
         <div>
-            <div style={{ display: 'flex', borderBottom: '2px solid #ccc' }}>
-                <TabsSetup
-                    title="One Card Spread"
-                    isActive={activeTab === 'OneCardSpread'}
-                    onClick={() => handleTabSelection('OneCardSpread')}
-                />
-                <TabsSetup
-                    title="Three Card Spread"
-                    isActive={activeTab === 'ThreeCardSpread'}
-                    onClick={() => handleTabSelection('ThreeCardSpread')}
-                />
-                <TabsSetup
-                    title="Five Card Spread"
-                    isActive={activeTab === 'FiveCardSpread'}
-                    onClick={() => handleTabSelection('FiveCardSpread')}
-                />
+            <div className="flex justify-center m-auto" style={{ display: 'flex' }}>
+                <button>
+                    <TabsSetup
+                        title="One Card Spread"
+                        isActive={activeTab === 'OneCardSpread'}
+                        onClick={() => handleTabSelection('OneCardSpread')}
+                    />
+                </button>
+                <button>
+                    <TabsSetup
+                        title="Three Card Spread"
+                        isActive={activeTab === 'ThreeCardSpread'}
+                        onClick={() => handleTabSelection('ThreeCardSpread')}
+                    />
+                </button>
+                <button>
+                    <TabsSetup
+                        title="Five Card Spread"
+                        isActive={activeTab === 'FiveCardSpread'}
+                        onClick={() => handleTabSelection('FiveCardSpread')}
+                    />
+                </button>
             </div>
 
-            <div style={{ padding: '20px', marginTop: '10px', border: '1px solid #ccc'}}>
+            <div className="flex justify-center" style={{ padding: '20px', marginTop: '10px', paddingBottom: '50px', marginBottom: '50px', backgroundColor: '#333' }}>
                 {activeTab === 'OneCardSpread' && 
                     <OneCardSpread />
                 }

@@ -22,19 +22,21 @@ export default function About() {
   if (error) return <div>Error loading cards; {error}</div>;
 
   return (
-    <div>
+    <div className="min-h-screen w-full relative flex-col item-center justify-center m-auto" style={{ backgroundColor: "#969696", paddingBottom: '50px' }}>
       <Header />
-      <div>About</div>
+      <div className="flex justify-center" style={{ marginTop: '50px' }}>About</div>
       <div className="flex justify-center">
           <Image
               src={`/Images/AboutImage.png`}
               width={250}
-              height={750}
+              height={300}
               className="h-60 w-auto"
+              style={{ marginTop: '30px' }}
               alt="Image of a pile of Tarot Cards"
           />
       </div>
-      <div>Tarot cards, with their mysterious origins dating back to 15th century 
+      <div className="flex justify-center text-center mx-auto" style={{ width: '75%', marginTop: '50px' }}>
+        Tarot cards, with their mysterious origins dating back to 15th century 
         Europe, have evolved from a simple card game into a powerful tool for 
         spiritual guidance and introspection. Originally used for leisurely 
         pastimes, their symbolism and imagery began to attract occultists and 

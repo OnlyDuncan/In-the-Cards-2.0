@@ -48,11 +48,11 @@ export default function Newsletter() {
   };
 
   return (
-    <div>
+    <div className="min-h-screen w-full relative flex-col item-center justify-center m-auto" style={{ backgroundColor: "#969696", paddingBottom: '50px' }}>
       <Header />
-      <div>This is the newsletter page.</div>
-      <div>
-        <form onSubmit={handleSubmit}>
+      <div className="flex justify-center" style={{ marginTop: "50px" }}>Newsletter</div>
+      <div className="flex justify-center" style={{ marginTop: "30px" }}>
+        <form onSubmit={handleSubmit} className="flex flex-col justify-center">
           <input
             type="email"
             value={email}
@@ -60,7 +60,7 @@ export default function Newsletter() {
             placeholder="enter your email"
             required
           />
-          <button type="submit">Subscribe</button>
+          <button type="submit" style={{ marginTop: "20px" }}>Subscribe</button>
         </form>
         {message && <p>{message}</p>}
       </div>

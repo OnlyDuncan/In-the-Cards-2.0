@@ -21,21 +21,20 @@ export default function HomePage() {
   if (error) return <div>Error loading cards; {error}</div>;
 
   return (
-    <div className="body relative" style={{ backgroundColor: "#969696" }}>
-      <div className="h-full w-full relative flex-col item-center justify-center m-auto" style={{ height: "100vh", backgroundColor: "#969696", margin: "0" }}>
+    <div className="body relative">
+      <div className="h-full w-full relative flex-col item-center justify-center m-auto" style={{ height: "100vh", backgroundColor: "#969696" }}>
         <Header />
-        <div className="flex justify-center">
+        <div className="flex justify-center" style={{ marginTop: '50px' }}>
           <h1>In the Cards</h1>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center" style={{ marginTop: '30px'}}>
           <img
             src='/Images/CardBack.webp'
-            width="100vw"
-            // height="auto"
+            width={150}
             alt="Tarot Card Deck"
           />
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center" style={{ backgroundColor: "#969696", marginTop: '50px' }}>
           <Tabs />
         </div>
       </div>

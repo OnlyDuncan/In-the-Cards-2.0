@@ -4,7 +4,6 @@ import React, { useEffect } from 'react';
 import Header from '../../components/Header.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCards } from '../../redux/actions/cardActions';
-import Image from 'next/image';
 import CardContentsLibrary from '@/components/CardContentsLibrary.js';
 
 export default function Library() {
@@ -23,8 +22,6 @@ export default function Library() {
   if (error) return <div>Error loading cards; {error}</div>;
 
   const deck = cardArray;
-
-  // console.log("Library Deck:", deck);
   
   const filteredDeck = deck.flatMap(card =>
     card.data.filter(item => item.Orientation === 'Upright')
@@ -38,33 +35,16 @@ export default function Library() {
     { title: "Suite of Pentacles", start: 64, end: 77 }
   ];
 
-  console.log("Filtered Deck:", filteredDeck);
-
   return (
-    <div>
+    <div className="min-h-screen w-full relative flex-col item-center justify-center m-auto" style={{ backgroundColor: "#969696", paddingBottom: '50px' }}>
       <Header />
-      <div>This is the library page.</div>
-      <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:px-5'>
+      <div className="flex justify-center w-full px-4" style={{ marginTop: "50px" }}>Library</div>
+      <div className='w-full flex flex-col items-center gap-12 mt-8 px-4' style={{ marginTop: "30px" }}>
         {sections.map(({ title, start, end }) => (
-          <div key={title} className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">{title}</h2>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:px-5">
+          <div key={title} className="w-full max-w-4xl">
+            <h2 className="text-2xl font-bold mb-4 text-center">{title}</h2>
+            <div className="grid xs:grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8">
               {filteredDeck.slice(start, end + 1).map((card) => (
-                // <div
-                //   key={card.Title}
-                //   className="relative"
-                // >
-                //   <Image
-                //     src={`/Images/${card.Image}.webp`}
-                //     alt={`Tarot Card`}
-                //     layout="responsive"
-                //     width={250}
-                //     height={750}
-                //     className="object-cover"
-                //   />
-                //   <div className="text-center mt-2 text-black">{cleanTitle(card.Title)}</div>
-                // </div>
-
                 <CardContentsLibrary
                   key={card.Title}
                   Title={card.Title}

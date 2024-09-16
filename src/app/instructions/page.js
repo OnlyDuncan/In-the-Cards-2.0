@@ -86,14 +86,14 @@ export default function Instructions() {
 
 
   return (
-    <div>
+    <div className="min-h-screen w-full relative flex-col item-center justify-center m-auto" style={{ backgroundColor: "#969696", paddingBottom: '50px' }}>
       <Header />
-      <div>Instructions</div>
-      <div>Remember that the Tarot is not about predicting the future in a deterministic sense, 
+      <div className="flex justify-center" style={{ marginTop: '50px' }}>Instructions</div>
+      <div className="flex justfy-center text-center m-auto" style={{ width: "75%", marginTop: '30px' }}>Remember that the Tarot is not about predicting the future in a deterministic sense, 
         but more about providing guidance and an opportunity for reflection of present problems 
         and potential outcomes. It is an invitation to positive introspection.
       </div>
-      <div className="faq-container">
+      <div className="faq-container" style={{ marginTop: '50px' }}>
         {faqs.map((faq, index) => (
           <div key={index} className="faq-item">
             <div className="faq-question" onClick={() => handleToggle(index)}>

@@ -28,7 +28,6 @@ export default function OneCardSpread () {
                                 classNames='flip'
                             >
                                 <CardContents {...shuffledDeck[0]} onClick={() => {
-                                    // console.log("This is the first card:", deck[0] )
                                     setShowFrontPresent(false);
                                 }} />
                             </CSSTransition>

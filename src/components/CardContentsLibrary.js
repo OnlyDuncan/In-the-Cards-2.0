@@ -48,14 +48,14 @@ export default function CardContentsLibrary ({ onClick, ...props }) {
     }
 
     return (
-        <div className="card" onClick={onClick}>
-            <div key={Title} className="relative">
+        <div className="card flex justify-center" onClick={onClick}>
+            <div key={Title} className="relative w-60">
                 <Image
                     src={`/Images/${image}.webp`}
                     alt={`Tarot Card`}
                     layout="responsive"
-                    width={250}
-                    height={750}
+                    width={80}
+                    height={200}
                     onClick={() => setIsOpen(true)}
                     className="object-cover"
                 />
@@ -81,20 +81,20 @@ export default function CardContentsLibrary ({ onClick, ...props }) {
                     <div className="flex justify-center">
                         <Image
                             src={`/Images/${image}.webp`}
-                            width={250}
-                            height={750}
+                            width={100}
+                            height={250}
                             layout="responsive"
-                            className={`object-cover h-60 w-auto ${Orientation === "Reversed" ? "reversed" : ""}`}
+                            className={`object-cover max-w-xs h-40 w-auto ${Orientation === "Reversed" ? "reversed" : ""}`}
                             alt={Title}
                         />
                     </div>
                     <br />
-                    <h1>Upright Menaing:</h1>
+                    <h1 className="flex justify-center" style={{ color: "white", marginBottom: "20px" }}>Upright Meaning:</h1>
                     <p className="flex text-center text-white pb-10 px-10">
                         {Meaning}
                     </p>
                     <br />
-                    <h1>Reversed Meaning:</h1>
+                    <h1 className="flex justify-center" style={{ color: "white", marginBottom: "20px" }}>Reversed Meaning:</h1>
                     <p className="flex text-center text-white pb-10 px-10">
                         {reversedMeaning}
                     </p>
